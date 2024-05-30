@@ -13,10 +13,16 @@
     src: url(NeueMachina-Light.otf);
 }
 
+@font-face {
+    font-family: font-4;
+    src: url(Lugati\ BLD\ EXP.otf);
+}
+
 * {
     margin: 0;
     padding: 0;
 }
+
 
 html,
 body {
@@ -40,13 +46,29 @@ body {
 
 .cursor {
     position: fixed;
-    background-color: black;
+    background-color: white;
+    mix-blend-mode: difference;
     width: 2vw;
     height: 2vw;
     border-radius: 50%;
     z-index: 100;
     opacity: 1;
     scale: 1;
+}
+
+.side-text {
+    position: absolute;
+    left: -20%;
+    top: 40%;
+    color: white;
+    rotate: 90deg;
+    opacity: .8;
+}
+
+.side-text h1 {
+    /* position: absolute; */
+    font-size: 12vw;
+    font-family: font-2;
 }
 
 .mix {
@@ -117,6 +139,11 @@ body {
     font-size: 1vw;
     font-weight: bold;
     text-transform: uppercase;
+    cursor: pointer;
+}
+
+.button button h1 {
+    font-size: 1vw;
 }
 
 .button span {
@@ -141,21 +168,93 @@ span i {
     flex-direction: column;
     row-gap: 1rem;
     position: relative;
-    background-color: white;
+    background: linear-gradient(to right, transparent, white, white), url(https://5.imimg.com/data5/SELLER/Default/2023/8/335919788/RE/AS/XT/180062131/noise-halo-plus-elite-edition-smartwatch-with-1-46-super-amoled-display-stainless-steel-500x500.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
 
 }
 
 .absolute {
     position: absolute;
-    left: 0;
-    color: white;
+    right: 0;
+    bottom: 5%;
+    width: 30%;
+    height: 40%;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background: rgba(112, 112, 112, 0.562);
+    padding: 1vw;
     display: flex;
-    align-items: start;
+    flex-direction: column;
+    row-gap: 10px;
+    overflow: hidden;
+
+}
+
+.noise-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
-.absolute h1 {
-    text-transform: uppercase;
+.absolute-top {
+    width: 100%;
+    height: 50%;
+    background-color: black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+}
+
+
+.absolute-bottom {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.bottom-right {
+    position: absolute;
+    right: -4%;
+    width: 60%;
+    height: 100%;
+    background-color: black;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow: hidden;
+}
+
+.bottom-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bottom-left {
+    width: 40%;
+    border-radius: 20px;
+    height: 100%;
+    overflow: hidden;
+    transition: all ease 0.5s;
+}
+
+.bottom-left:hover {
+    transform: rotate(180deg);
+}
+
+.bottom-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .img {
@@ -168,11 +267,12 @@ span i {
     width: 90%;
 }
 
-.page-1 h1 {
+.heading h1 {
     text-align: center;
     font-size: 8vw;
     font-weight: 700;
     font-family: font-1;
+
 }
 
 .page-1 h3 {
@@ -189,7 +289,13 @@ span i {
     margin-top: 1rem;
     border-radius: 40px;
     cursor: pointer;
+    transition: all ease 0.3s;
+    opacity: 0;
 
+}
+
+.btn button:hover {
+    transform: translateY(-.8vw) !important;
 }
 
 .page-2 {
@@ -266,6 +372,20 @@ span i {
     row-gap: 2vw;
     margin: 2rem 0;
     align-items: end;
+}
+
+.side-img {
+    width: 10vw;
+    height: 5vw;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.side-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
 }
 
 .desc h1 {
@@ -776,7 +896,106 @@ li {
 .page-9 {
     width: 100%;
     height: 100vh;
+    background-color: black;
+    background-size: cover;
     position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cutout {
+    position: absolute;
+    right: 10%;
+    scale: 7;
+}
+
+.cutout-2 {
+    position: absolute;
+    left: -10%;
+    bottom: -10%;
+    scale: 1.5;
+}
+
+.cutout-4 {
+    position: absolute;
+    left: 50%;
+    bottom: -30%;
+    scale: 1;
+}
+
+.cutout-3 {
+    position: absolute;
+    top: -10%;
+    left: 0;
+}
+
+.above {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.foot-left {
+    position: relative;
+    width: 60%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1rem;
+    color: white;
+    /* border-right: 2px solid white; */
+}
+
+.foot-left img {
+    width: 50%;
+}
+
+.icons {
+    position: relative;
+    right: 10%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.icons h3 {
+    padding: 10px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.foot-left i {
+    color: white;
+    font-size: 2vw;
+}
+
+.foot-right {
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    width: 90%;
+    height: 12vh;
+    background-color: transparent;
+    border-top: 4px solid white;
+    font-family: font-3;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8vw;
 }
 
 .footer {
@@ -789,7 +1008,6 @@ li {
     align-items: end;
     justify-content: center;
     background-color: white;
-
 }
 
 .footer h1 {
@@ -797,56 +1015,6 @@ li {
     font-family: font-1;
     border-bottom: 2px solid black;
     margin-bottom: 2rem;
-}
-
-.foot-lists {
-    position: absolute;
-    top: 20%;
-    left: 10%;
-    z-index: 4;
-}
-
-.foot-lists h4 {
-    font-size: 2vw;
-    font-family: font-3;
-    margin: .5rem;
-    position: relative;
-    color: black;
-    cursor: pointer;
-}
-
-.foot-lists h4:hover::after {
-    width: 100%;
-}
-
-.foot-lists h4::after {
-    position: absolute;
-    content: '';
-    width: 0;
-    height: 2px;
-    background-color: black;
-    top: 100%;
-    left: 0;
-    transition: all ease 0.5s;
-
-}
-
-.foot-img {
-    position: absolute;
-    top: 10%;
-    left: 20%;
-    width: 20vw;
-    height: 20vw;
-    border-radius: 50%;
-    /* background-color: red; */
-    overflow: hidden;
-    z-index: 5;
-}
-
-.foot-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 .img-2 {
@@ -857,21 +1025,13 @@ li {
 @media (max-width: 600px) {
 
     .cursor {
-        position: fixed;
-        background-color: black;
-        width: 4vw;
-        height: 4vw;
-        border-radius: 50%;
-        z-index: 100;
-        opacity: 1;
-        scale: 1;
+        display: none;
     }
-
 
     .navbar {
         position: absolute;
         z-index: 99;
-        height: 8vh;
+        height: 7vh;
         width: calc(100% - 2rem);
         margin: 1rem;
         box-sizing: border-box;
@@ -882,27 +1042,18 @@ li {
         justify-content: space-between;
     }
 
-    .logo {
-        margin: 3rem;
-    }
-
-    .logo img {
-        width: 50%;
-    }
-
     .lists {
         display: none;
     }
 
     .button {
-        margin: 3rem;
+        margin: 1.2vw;
         padding: .8vw 1vw;
         background-color: white;
         border-radius: 30px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        /* gap: 2rem; */
         cursor: pointer;
         transition: all ease 0.5s;
     }
@@ -912,10 +1063,13 @@ li {
         border: none;
         background-color: transparent;
         color: black;
-        font-size: 2vw;
         font-weight: bold;
         text-transform: uppercase;
         word-wrap: nowrap;
+    }
+
+    .button button h1 {
+        font-size: 2vw;
     }
 
     .button span {
@@ -929,15 +1083,48 @@ li {
     }
 
     span i {
-        font-size: 2vw;
+        font-size: 2.5vw;
         color: white;
     }
 
-    .page-1 h1 {
+    .page-1 {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: sans-serif;
+        flex-direction: column;
+        row-gap: 1rem;
+        position: relative;
+        background-image: none;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        background-color: white;
+    }
+
+    .noise-con {
+        width: 100%;
+        height: 100%;
+    }
+
+    .ab-con {
+        display: none;
+        width: 100%;
+        height: 80%;
+    }
+
+    .mix {
+        position: relative;
+    }
+
+    .heading h1 {
         text-align: center;
-        font-size: 14vw;
+        font-size: 15vw;
         font-weight: 700;
         font-family: font-1;
+        /* color: black; */
     }
 
     .page-1 h3 {
@@ -957,25 +1144,30 @@ li {
 
     }
 
+    .page-1-bottom {
+        clip-path: polygon(91% 0, 100% 100%, 0 99%, 0 0);
+        position: absolute;
+        background-color: black;
+        width: 80%;
+        height: 10vh;
+        bottom: -1%;
+        left: 0;
+    }
     .page-2 {
         width: 100%;
-        height: 400vh;
+        height: 100vh;
+        background-image: url(https://www.gonoise.com/cdn/shop/files/ColorFit-Ultra-3-mobile-2_07.webp?v=1690001963);
     }
 
     .slides {
-        position: sticky;
-        top: 0;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-        display: flex;
+        display: none;
     }
 
-    .slide {
-        flex-shrink: 0;
-        width: 100%;
-        height: 100%;
+    .side-img {
+        display: none;
     }
+    
+
 
     .page-3 {
         width: calc(100% - 1rem);
@@ -986,7 +1178,7 @@ li {
         align-items: center;
         padding: 1vw;
         gap: 1vw;
-        cursor: none;
+        cursor: pointer;
         /* position: relative; */
     }
 
@@ -1003,7 +1195,10 @@ li {
         height: 100vh;
         /* height: 100%; */
     }
-
+    .side-img {
+        display: none;
+    }
+    
     .desc {
         background-image: url(https://www.gonoise.com/cdn/shop/files/mobile2.jpg?v=1714634063);
         cursor: pointer;
@@ -1106,7 +1301,7 @@ li {
     }
 
     .page-5 {
-        width: calc(100% - 2vw);
+        width: calc(100% - 1vw);
         display: flex;
         flex-direction: column;
         padding: 1vw;
@@ -1128,7 +1323,7 @@ li {
 
     .card {
         width: 40%;
-        height: 50vh;
+        height: 45vh;
         background-color: rgb(216, 216, 216);
         border-radius: 10px;
         padding: 15px;
@@ -1305,5 +1500,144 @@ li {
     .form button:active {
         scale: .9
     }
+
+    .page-7 {
+        width: calc(100% - 2vw);
+        padding: 1vw;
+        height: 200vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        background-color: black;
+        overflow: hidden;
+    }
+    
+    .img-7 {
+        width: calc(100% - 1rem);
+        border-radius: 10px;
+        overflow: hidden;
+        height: 40vh;
+    }
+    
+    .box {
+        display: none;
+    }
+    
+    .img-7 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+    
+
+    
+    .img-con {
+        width: 100%;
+        height: 100%; 
+        gap: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; 
+    }
+    
+
+    .page-8 {
+        width: 100%;
+        height: 50vh;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    
+    .chat {
+        width: calc(100% - 2vw);
+        height: 110vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 1vw;
+        row-gap: 1rem;
+        background-image: url(https://entrackr.com/storage/2022/04/noise.jpg);
+        background-size: cover;
+        color: white;
+    }
+    
+    .chat-box {
+        width: calc(100% - 2vw);
+        height: 80vh;
+        background-color: rgba(255, 255, 255, 0.267);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: end;
+        row-gap: 1rem;
+        padding: 1vw;
+        pointer-events: none;
+    }
+    
+    li {
+        position: relative;
+        padding: .5vw 3vw;
+        border-radius: 30px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: rgb(0, 89, 255);
+        list-style-type: none;
+        display: flex;
+    }
+    
+    .input {
+        width: calc(100% - 2rem);
+        height: 5%;
+        background-color: white;
+        border-radius: 50px;
+        overflow: hidden;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .send {
+        background-color: black;
+        padding: 10px 30px;
+        margin: 0 5px;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    
+    .send i {
+        color: white;
+        font-size: 2vw;
+    }
+    
+    .input input {
+        width: 100%;
+        height: 100%;
+        outline: none;
+        border: none;
+        font-size: 4vw;
+    }
+    
+footer {
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    width: 90%;
+    height: 12vh;
+    background-color: transparent;
+    border-top: 4px solid white;
+    font-family: font-3;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vw;
+}
 
 }

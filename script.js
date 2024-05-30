@@ -2,7 +2,7 @@
     const locomotiveScroll = new LocomotiveScroll();
 })();
 
-let h1 = document.querySelector(".page-1 h1")
+let h1 = document.querySelector(".heading h1")
 let h1Text = h1.textContent
 let spiltedText = h1Text.split("")
 let clutter = ""
@@ -10,6 +10,14 @@ spiltedText.forEach((dets) => {
     clutter += `<span>${dets}</span>`
 })
 h1.innerHTML = clutter
+let sideh1 = document.querySelector(".side-text h1")
+let sideText = h1.textContent
+let spiltedside = h1Text.split("")
+let sideclutter = ""
+spiltedside.forEach((dets) => {
+    sideclutter += `<span>${dets}</span>`
+})
+sideh1.innerHTML = clutter
 gsap.to(".slide", {
     scrollTrigger: {
         trigger: ".page-2",
@@ -70,12 +78,17 @@ tl.from(".lists h4:nth-child(even)", {
     duration: .7
 }, 'a')
 
-tl.from(".page-1 h1 span", {
-    y: -400,
+tl.from(".heading h1 span", {
+    // y: -400,
     opacity: 0,
     stagger: .2,
     duration: .5,
-})
+},'c')
+tl.from(".side-text h1 span", {
+    opacity: 0,
+    stagger: .2,
+    duration: .5,
+},'c')
 tl.from(".page-1 h3:nth-child(odd)", {
     y: 400,
     stagger: .3,
@@ -86,15 +99,20 @@ tl.from(".page-1 h3:nth-child(even)", {
     stagger: .3,
     duration: .5
 }, 'b')
-tl.from(".page-1 button", {
-    y: -200,
+tl.to(".page-1 button", {
+    // y: -200,
+    opacity: 1,
     duration: .5
+})
+tl.from(".absolute", {
+    x: 550,
+    duration: .3
 })
 
 
 gsap.from(".back h1", {
     scrollTrigger: {
-        trigger: ".page-4",
+        trigger: ".back h1",
         start: "top 40%",
         end: "bottom 80%",
         scrub: 1,
@@ -111,9 +129,9 @@ gsap.to(".front", {
         scrub: 1,
     },
     left: 0,
-    duration: .3,
-    ease: Power4
+    duration: .2,
 })
+
 gsap.to(".page-4", {
     scrollTrigger: {
         trigger: ".page-4",
@@ -125,6 +143,19 @@ gsap.to(".page-4", {
 
 let crsr = document.querySelector(".cursor")
 
+
+
+
+gsap.from('.side-img',{
+    scrollTrigger:{
+        trigger: '.side-img',
+        start: 'top 60%',
+        end: 'bottom 70%',
+        scrub: 1
+    },
+    width: 0,
+    duration: .2
+})
 
 
 document.querySelector('.main').addEventListener('mousemove', (dets) => {
@@ -157,7 +188,7 @@ document.querySelector('.mix').addEventListener('mouseleave', () => {
 
 let arr = [
     {
-        cardImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg9MNcNoRaGsoWFquoR5dyOpKVHhbMJ1C3ViaUMdHTkTVTHLXbUd9AOarpZYg1bliW83I&usqp=CAU",
+        cardImg: "https://www.zebrs.com/uploads/zebrs/products/noise-colorfit-pro-4-alpha-1-78-amoled-display-281651_l.jpg",
         title: "ColorFit Pulse 4",
         subTitle: "1.92 Amoled BT Calling",
         price: "2,499",
@@ -165,7 +196,7 @@ let arr = [
         rating: "4.5"
     },
     {
-        cardImg: "https://assets.myntassets.com/w_412,q_60,dpr_2,fl_progressive/assets/images/23241662/2024/2/1/5a0c17bf-8f52-49e1-a29a-39e9e979be7a1706781353663-NOISE-Buds-Aero-Truly-Wireless-Earbuds-with-45hrs-Playtime-a-14.jpg",
+        cardImg: "https://hamrobazaar.blr1.cdn.digitaloceanspaces.com/User/Posts/2024/02/07/fdaf299a-2513-cb56-24b6-4ee9f612878f.webp?x-image-process=image/resize,m_lfit,h_300,w_300",
         title: "Buds Xero",
         subTitle: "Adaptive ANC",
         price: "4,499",
@@ -181,7 +212,7 @@ let arr = [
         rating: "4.9"
     },
     {
-        cardImg: "https://www.addmecart.com/wp-content/uploads/2023/08/123-260.png",
+        cardImg: "https://rukminim2.flixcart.com/image/850/1000/xif0q/headphone/u/9/7/-original-imagshf7aszzz7y8.jpeg?q=90&crop=false",
         title: "Buds Combat Z",
         subTitle: "gaming with ultra low latency",
         price: "1,299",
@@ -189,35 +220,35 @@ let arr = [
         rating: "5.0"
     },
     {
-        cardImg: "https://www.addmecart.com/wp-content/uploads/2023/08/123-260.png",
-        title: "Buds Combat Z",
+        cardImg: "https://cdn.shopify.com/s/files/1/0997/6284/files/image_2023_08_05T05_02_19_762Z_480x480.png?v=1691215012",
+        title: "Luna Rings",
+        subTitle: "gaming with ultra low latency",
+        price: "19,999",
+        strike: "21,999",
+        rating: "4.9"
+    },
+    {
+        cardImg: "https://m.media-amazon.com/images/I/714lWnTOKhL.jpg",
+        title: "One true bass",
         subTitle: "gaming with ultra low latency",
         price: "1,299",
         strike: "3,999",
         rating: "5.0"
     },
     {
-        cardImg: "https://www.addmecart.com/wp-content/uploads/2023/08/123-260.png",
-        title: "Buds Combat Z",
+        cardImg: "https://www.bajaao.com/cdn/shop/files/noise-bluetooth-speakers-noise-vibe-5w-wireless-bluetooth-speaker-23141610946739_500x.jpg?v=1688047786",
+        title: "Vibe 2 5Wl",
         subTitle: "gaming with ultra low latency",
-        price: "1,299",
-        strike: "3,999",
-        rating: "5.0"
+        price: "1,499",
+        strike: "3,499",
+        rating: "3.0"
     },
     {
-        cardImg: "https://www.addmecart.com/wp-content/uploads/2023/08/123-260.png",
-        title: "Buds Combat Z",
+        cardImg: "https://www.jiomart.com/images/product/original/493838766/noise-noisefit-mettle-smart-watch-elite-silver-digital-o493838766-p603480304-1-202308020525.jpeg?im=Resize=(420,420)",
+        title: "NoiseFit Mettle Smart Watch",
         subTitle: "gaming with ultra low latency",
-        price: "1,299",
-        strike: "3,999",
-        rating: "5.0"
-    },
-    {
-        cardImg: "https://www.addmecart.com/wp-content/uploads/2023/08/123-260.png",
-        title: "Buds Combat Z",
-        subTitle: "gaming with ultra low latency",
-        price: "1,299",
-        strike: "3,999",
+        price: "2,199",
+        strike: "7,999",
         rating: "5.0"
     },
 ]
@@ -281,30 +312,6 @@ gsap.to(".page-6", {
     },
 })
 
-document.querySelector(".front-6").addEventListener('mousemove', () => {
-    gsap.to(crsr, {
-        backgroundColor: 'white'
-    })
-})
-document.querySelector(".page-7").addEventListener('mousemove', () => {
-    gsap.to(crsr, {
-        backgroundColor: 'white'
-    })
-})
-
-document.querySelector(".page-8").addEventListener('mouseenter', () => {
-    gsap.to(crsr, {
-        backgroundColor: 'white',
-        scale: 0
-    })
-})
-
-
-document.querySelector(".front-6").addEventListener('mouseleave', () => {
-    gsap.to(crsr, {
-        backgroundColor: 'black'
-    })
-})
 document.querySelector(".form").addEventListener('mouseenter', () => {
     gsap.to(crsr, {
         scale: 0
@@ -350,3 +357,4 @@ send.addEventListener('click', () => {
         input.value = ""
     }
 })
+
