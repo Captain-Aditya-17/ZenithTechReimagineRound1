@@ -17,11 +17,19 @@ let sideclutter = ""
 spiltedside.forEach((dets) => {
     sideclutter += `<span>${dets}</span>`
 })
-sideh1.innerHTML = clutter
+sideh1.innerHTML = sideclutter
+let footh1 = document.querySelector(".footer h1")
+let footText = h1.textContent
+let footside = h1Text.split("")
+let footclutter = ""
+footside.forEach((dets) => {
+    footclutter += `<span>${dets}</span>`
+})
+footh1.innerHTML = clutter
 gsap.to(".slide", {
     scrollTrigger: {
         trigger: ".page-2",
-        start: "top top",
+        start: "30% top",
         end: "bottom bottom",
         scrub: 1,
     },
@@ -62,7 +70,16 @@ elem.forEach(function (e) {
 let tl = gsap.timeline({
     delay: .3
 })
-
+tl.from(".footer h1 span", {
+    opacity: 0,
+    stagger: .2,
+    duration: .5,
+})
+tl.from(".page-1", {
+    opacity: 0,
+    delay: .8,
+    ease: Power4
+})
 tl.from(".navbar", {
     y: -400
 })
@@ -108,8 +125,27 @@ tl.from(".absolute", {
     x: 550,
     duration: .3
 })
-
-
+let video = document.querySelector('.video video')
+gsap.to(video,{
+    scrollTrigger:{
+        trigger: video,
+        start: '5% top',
+        end: 'bottom top',
+        scrub: 1
+    },
+    onStart:()=>{
+        video.play()
+    }
+})
+gsap.to('.video',{
+    scrollTrigger:{
+        trigger: '.video',
+        start: '3% top',
+        end: 'bottom top',
+        scrub: 1,
+        pin: true
+    },
+})
 gsap.from(".back h1", {
     scrollTrigger: {
         trigger: ".back h1",
@@ -125,7 +161,7 @@ gsap.to(".front", {
     scrollTrigger: {
         trigger: ".page-4",
         start: "50% top",
-        end: "bottom top",
+        end: "top top",
         scrub: 1,
     },
     left: 0,
@@ -175,16 +211,6 @@ document.querySelector('.mix').addEventListener('mouseleave', () => {
         scale: 1
     })
 })
-// document.querySelector('.back-6 h1').addEventListener('mousemove',()=>{
-//     gsap.to(crsr,{
-//         scale: 6
-//     })
-// })
-// document.querySelector('.back-6 h1').addEventListener('mouseleave',()=>{
-//     gsap.to(crsr,{
-//         scale: 1
-//     })
-// })
 
 let arr = [
     {

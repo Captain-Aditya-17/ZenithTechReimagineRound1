@@ -30,10 +30,10 @@ body {
     height: 100%;
 }
 
-/* 
+
 body::-webkit-scrollbar {
     display: none;
-} */
+}
 
 body {
     scroll-behavior: smooth;
@@ -168,7 +168,7 @@ span i {
     flex-direction: column;
     row-gap: 1rem;
     position: relative;
-    background: linear-gradient(to right, transparent, white, white), url(https://5.imimg.com/data5/SELLER/Default/2023/8/335919788/RE/AS/XT/180062131/noise-halo-plus-elite-edition-smartwatch-with-1-46-super-amoled-display-stainless-steel-500x500.jpg);
+    background: linear-gradient(to right, transparent, white, white), url(https://images.livemint.com/img/2022/09/08/1600x900/noise_air_buds_pro_2_1662655807697_1662655823791_1662655823791.png);
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -296,6 +296,18 @@ span i {
 
 .btn button:hover {
     transform: translateY(-.8vw) !important;
+}
+
+.video {
+    width: 100%;
+    height: 100vh;
+}
+
+.video video {
+    width: 100%;
+    height: 110vh;
+    object-fit: cover;
+    object-position: bottom;
 }
 
 .page-2 {
@@ -977,10 +989,7 @@ li {
     font-size: 2vw;
 }
 
-.foot-right {
-    width: 100%;
-    height: 100%;
-}
+
 
 footer {
     position: absolute;
@@ -1005,16 +1014,37 @@ footer {
     bottom: 0;
     z-index: 9;
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: black;
 }
 
 .footer h1 {
-    font-size: 14vw;
+    font-size: 12vw;
     font-family: font-1;
-    border-bottom: 2px solid black;
+    color: white;
     margin-bottom: 2rem;
+}
+
+.foot-right {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 10vw;
+}
+
+.foot-lists {
+    color: white;
+    font-size: 1vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+}
+
+.foot-lists h4 {
+    font-weight: lighter;
+    cursor: pointer;
 }
 
 .img-2 {
@@ -1065,7 +1095,7 @@ footer {
         color: black;
         font-weight: bold;
         text-transform: uppercase;
-        word-wrap: nowrap;
+        white-space: nowrap;
     }
 
     .button button h1 {
@@ -1090,17 +1120,9 @@ footer {
     .page-1 {
         width: 100%;
         height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: sans-serif;
-        flex-direction: column;
-        row-gap: 1rem;
-        position: relative;
-        background-image: none;
         background-size: cover;
-        background-position: center;
-        overflow: hidden;
+        background-position: bottom;
+        background: linear-gradient(to top, transparent, white, white), url(https://images.livemint.com/img/2022/09/08/1600x900/noise_air_buds_pro_2_1662655807697_1662655823791_1662655823791.png);
         background-color: white;
     }
 
@@ -1149,14 +1171,16 @@ footer {
         position: absolute;
         background-color: black;
         width: 80%;
-        height: 10vh;
+        height: 8vh;
         bottom: -1%;
         left: 0;
     }
+
     .page-2 {
         width: 100%;
-        height: 100vh;
+        height: 120vh;
         background-image: url(https://www.gonoise.com/cdn/shop/files/ColorFit-Ultra-3-mobile-2_07.webp?v=1690001963);
+        background-position: center;
     }
 
     .slides {
@@ -1166,11 +1190,9 @@ footer {
     .side-img {
         display: none;
     }
-    
-
 
     .page-3 {
-        width: calc(100% - 1rem);
+        width: 100%;
         height: 200vh;
         display: flex;
         flex-direction: column;
@@ -1195,10 +1217,11 @@ footer {
         height: 100vh;
         /* height: 100%; */
     }
+
     .side-img {
         display: none;
     }
-    
+
     .desc {
         background-image: url(https://www.gonoise.com/cdn/shop/files/mobile2.jpg?v=1714634063);
         cursor: pointer;
@@ -1296,15 +1319,15 @@ footer {
         width: 100%;
         height: 100vh;
         background-color: black;
-        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTUquSrw-sBR1jM4CQTDbr_SwxZ8LBKoJvMZFzT17_q5NIONZ2eSj8K38OaGFE5Q3LiQU&usqp=CAU);
+        background-image: url(https://imgs.search.brave.com/lc2aEq5pwzyWlBWg-xP4KTOdf9KbYHo0jxcd1ZtjfKE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/emVicnMuY29tL3Vw/bG9hZHMvemVicnMv/cHJvZHVjdHMvbm9p/c2UtcXVhZC1jYWxs/LTE4MXF1b3QtZGlz/cGxheS1ibHVldG9v/dGgtY2FsbGluZy1z/bWFydC13YXRjaC1h/aS12b2ljZS1hc3Np/c3RhbmNlLTY3Mzgw/MDAwMTczNTc0N19t/LmpwZz92PTQyMw);
         background-size: cover;
+        background-position: center;
     }
 
     .page-5 {
-        width: calc(100% - 1vw);
+        width: 100%;
         display: flex;
         flex-direction: column;
-        padding: 1vw;
     }
 
     .h1 {
@@ -1317,16 +1340,14 @@ footer {
     .card-container {
         display: flex;
         flex-wrap: wrap;
-        gap: 1rem;
+        gap: .5rem;
         justify-content: center;
     }
 
     .card {
         width: 40%;
-        height: 45vh;
-        background-color: rgb(216, 216, 216);
-        border-radius: 10px;
-        padding: 15px;
+        height: 43vh;
+        padding: 10px;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -1336,7 +1357,7 @@ footer {
 
     .card-img {
         width: 100%;
-        height: 90%;
+        height: 100%;
         border-radius: 10px;
         overflow: hidden;
     }
@@ -1350,7 +1371,7 @@ footer {
     .card-details {
         display: flex;
         flex-direction: column;
-        row-gap: 1rem;
+        row-gap: 10px;
         width: 100%;
         height: 40%;
         font-family: font-3;
@@ -1358,11 +1379,11 @@ footer {
     }
 
     .card-details h1 {
-        font-size: 4vw;
+        font-size: 3vw;
     }
 
     .card-details h3 {
-        font-size: 2.3vw;
+        font-size: 2vw;
         color: grey;
     }
 
@@ -1384,7 +1405,7 @@ footer {
     }
 
     .part-2 i {
-        font-size: 2vw;
+        font-size: 3vw;
         color: rgb(255, 166, 0);
     }
 
@@ -1511,37 +1532,37 @@ footer {
         background-color: black;
         overflow: hidden;
     }
-    
+
     .img-7 {
         width: calc(100% - 1rem);
         border-radius: 10px;
         overflow: hidden;
         height: 40vh;
     }
-    
+
     .box {
         display: none;
     }
-    
+
     .img-7 img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: top;
     }
-    
 
-    
+
+
     .img-con {
         width: 100%;
-        height: 100%; 
+        height: 100%;
         gap: 1rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden; 
+        overflow: hidden;
     }
-    
+
 
     .page-8 {
         width: 100%;
@@ -1551,8 +1572,8 @@ footer {
         align-items: center;
         justify-content: center;
     }
-    
-    
+
+
     .chat {
         width: calc(100% - 2vw);
         height: 110vh;
@@ -1566,7 +1587,7 @@ footer {
         background-size: cover;
         color: white;
     }
-    
+
     .chat-box {
         width: calc(100% - 2vw);
         height: 80vh;
@@ -1581,7 +1602,7 @@ footer {
         padding: 1vw;
         pointer-events: none;
     }
-    
+
     li {
         position: relative;
         padding: .5vw 3vw;
@@ -1591,7 +1612,7 @@ footer {
         list-style-type: none;
         display: flex;
     }
-    
+
     .input {
         width: calc(100% - 2rem);
         height: 5%;
@@ -1602,7 +1623,7 @@ footer {
         display: flex;
         align-items: center;
     }
-    
+
     .send {
         background-color: black;
         padding: 10px 30px;
@@ -1610,12 +1631,12 @@ footer {
         border-radius: 30px;
         cursor: pointer;
     }
-    
+
     .send i {
         color: white;
         font-size: 2vw;
     }
-    
+
     .input input {
         width: 100%;
         height: 100%;
@@ -1623,21 +1644,130 @@ footer {
         border: none;
         font-size: 4vw;
     }
-    
-footer {
-    position: absolute;
-    bottom: 0;
-    z-index: 10;
-    width: 90%;
-    height: 12vh;
-    background-color: transparent;
-    border-top: 4px solid white;
-    font-family: font-3;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2vw;
-}
+
+    .page-9 {
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cutout {
+        position: absolute;
+        right: 10%;
+        scale: 7;
+        display: none;
+    }
+
+    .cutout-2 {
+        position: absolute;
+        left: -10%;
+        bottom: -10%;
+        scale: 1.5;
+    }
+
+    .cutout-4 {
+        position: absolute;
+        left: 50%;
+        bottom: -30%;
+        scale: 1;
+    }
+
+    .cutout-3 {
+        position: absolute;
+        top: -10%;
+        left: 0;
+    }
+
+    .above {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .foot-left {
+        position: relative;
+        width: 60%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+        color: white;
+    }
+
+    .foot-left img {
+        width: 60%;
+    }
+
+    .icons {
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        transform: translate(-50%);
+        right: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .icons h3 {
+        padding: 10px 12px;
+        background-color: black;
+        border-radius: 50%;
+    }
+
+    .foot-left i {
+        color: white;
+        font-size: 4vw;
+    }
+
+    footer {
+        font-size: 2vw;
+    }
+
+
+    .footer h1 {
+        font-size: 12vw;
+        font-family: font-1;
+        color: white;
+        margin-bottom: 2rem;
+    }
+
+    .foot-right {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: top;
+        gap: 10vw;
+    }
+
+    .foot-lists {
+        color: white;
+        font-size: 1.8vw;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        display: flex;
+        flex-direction: column;
+        row-gap: .5rem;
+    }
+
+    .foot-lists h4 {
+        font-weight: lighter;
+        cursor: pointer;
+    }
+
+    .img-2 {
+        top: 60%;
+        left: 70%;
+    }
 
 }
