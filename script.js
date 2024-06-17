@@ -29,7 +29,7 @@ footh1.innerHTML = clutter
 gsap.to(".slide", {
     scrollTrigger: {
         trigger: ".page-2",
-        start: "30% top",
+        start: "20% top",
         end: "bottom bottom",
         scrub: 1,
     },
@@ -161,7 +161,7 @@ gsap.to(".front", {
     scrollTrigger: {
         trigger: ".page-4",
         start: "50% top",
-        end: "top top",
+        end: "bottom top",
         scrub: 1,
     },
     left: 0,
