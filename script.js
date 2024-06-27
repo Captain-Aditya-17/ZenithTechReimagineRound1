@@ -30,7 +30,7 @@ gsap.to(".slide", {
     scrollTrigger: {
         trigger: ".page-2",
         start: "20% top",
-        end: "bottom bottom",
+        end: "bottom top",
         scrub: 1,
     },
     xPercent: -300
@@ -54,7 +54,6 @@ elem.forEach(function (e) {
             opacity: 0,
             scale: 0
         })
-        // left.style.backgroundImage = `url(https://cdn.shopify.com/s/files/1/0997/6284/files/1200x1200_9fe27a77-0d41-41f9-85e5-6ae786fa26f5_480x480.jpg?v=1713203190)`
     })
     e.addEventListener("mousemove", function (dets) {
         gsap.to(this.querySelector('.picture'), {
@@ -75,11 +74,17 @@ tl.from(".footer h1 span", {
     stagger: .2,
     duration: .5,
 })
+tl.from('.footer h3', {
+    x: 40,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2
+})
 tl.from(".page-1", {
     opacity: 0,
-    delay: .8,
     ease: Power4
 })
+
 tl.from(".navbar", {
     y: -400
 })
@@ -96,16 +101,15 @@ tl.from(".lists h4:nth-child(even)", {
 }, 'a')
 
 tl.from(".heading h1 span", {
-    // y: -400,
     opacity: 0,
     stagger: .2,
     duration: .5,
-},'c')
+}, 'c')
 tl.from(".side-text h1 span", {
     opacity: 0,
     stagger: .2,
     duration: .5,
-},'c')
+}, 'c')
 tl.from(".page-1 h3:nth-child(odd)", {
     y: 400,
     stagger: .3,
@@ -117,7 +121,6 @@ tl.from(".page-1 h3:nth-child(even)", {
     duration: .5
 }, 'b')
 tl.to(".page-1 button", {
-    // y: -200,
     opacity: 1,
     duration: .5
 })
@@ -126,19 +129,19 @@ tl.from(".absolute", {
     duration: .3
 })
 let video = document.querySelector('.video video')
-gsap.to(video,{
-    scrollTrigger:{
+gsap.to(video, {
+    scrollTrigger: {
         trigger: video,
         start: '5% top',
         end: 'bottom top',
         scrub: 1
     },
-    onStart:()=>{
+    onStart: () => {
         video.play()
     }
 })
-gsap.to('.video',{
-    scrollTrigger:{
+gsap.to('.video', {
+    scrollTrigger: {
         trigger: '.video',
         start: '3% top',
         end: 'bottom top',
@@ -160,8 +163,8 @@ gsap.from(".back h1", {
 gsap.to(".front", {
     scrollTrigger: {
         trigger: ".page-4",
-        start: "50% top",
-        end: "bottom top",
+        start: "80% top",
+        end: "top top",
         scrub: 1,
     },
     left: 0,
@@ -181,23 +184,12 @@ let crsr = document.querySelector(".cursor")
 
 
 
-
-gsap.from('.side-img',{
-    scrollTrigger:{
-        trigger: '.side-img',
-        start: 'top 60%',
-        end: 'bottom 70%',
-        scrub: 1
-    },
-    width: 0,
-    duration: .2
-})
-
-
 document.querySelector('.main').addEventListener('mousemove', (dets) => {
     gsap.to(crsr, {
         x: dets.x,
-        y: dets.y
+        y: dets.y,
+        opacity: 1
+
     })
 })
 
@@ -214,7 +206,7 @@ document.querySelector('.mix').addEventListener('mouseleave', () => {
 
 let arr = [
     {
-        cardImg: "https://www.zebrs.com/uploads/zebrs/products/noise-colorfit-pro-4-alpha-1-78-amoled-display-281651_l.jpg",
+        cardImg: "./images/1.jpg",
         title: "ColorFit Pulse 4",
         subTitle: "1.92 Amoled BT Calling",
         price: "2,499",
@@ -222,7 +214,7 @@ let arr = [
         rating: "4.5"
     },
     {
-        cardImg: "https://hamrobazaar.blr1.cdn.digitaloceanspaces.com/User/Posts/2024/02/07/fdaf299a-2513-cb56-24b6-4ee9f612878f.webp?x-image-process=image/resize,m_lfit,h_300,w_300",
+        cardImg: "./images/2.webp",
         title: "Buds Xero",
         subTitle: "Adaptive ANC",
         price: "4,499",
@@ -230,7 +222,7 @@ let arr = [
         rating: "4.9"
     },
     {
-        cardImg: "https://www.gonoise.com/cdn/shop/files/Artboard1copy_0a18624b-da50-4110-9c37-d0af8eacdaca.png?v=1714461815",
+        cardImg: "./images/3.png",
         title: "ColorFit Pro 5 Max AMOLED",
         subTitle: "1.96 Amoled ColorFit VO Max",
         price: "4,499",
@@ -238,7 +230,7 @@ let arr = [
         rating: "4.9"
     },
     {
-        cardImg: "https://rukminim2.flixcart.com/image/850/1000/xif0q/headphone/u/9/7/-original-imagshf7aszzz7y8.jpeg?q=90&crop=false",
+        cardImg: "./images/4.jpeg",
         title: "Buds Combat Z",
         subTitle: "gaming with ultra low latency",
         price: "1,299",
@@ -246,33 +238,33 @@ let arr = [
         rating: "5.0"
     },
     {
-        cardImg: "https://cdn.shopify.com/s/files/1/0997/6284/files/image_2023_08_05T05_02_19_762Z_480x480.png?v=1691215012",
+        cardImg: "./images/5.png",
         title: "Luna Rings",
-        subTitle: "gaming with ultra low latency",
+        subTitle: "Buy the best smart ring - Luna ring",
         price: "19,999",
         strike: "21,999",
         rating: "4.9"
     },
     {
-        cardImg: "https://m.media-amazon.com/images/I/714lWnTOKhL.jpg",
-        title: "One true bass",
-        subTitle: "gaming with ultra low latency",
+        cardImg: "./images/6.jpg",
+        title: "One tru bass",
+        subTitle: " dual pairing, voice assistant, and more.",
         price: "1,299",
         strike: "3,999",
         rating: "5.0"
     },
     {
-        cardImg: "https://www.bajaao.com/cdn/shop/files/noise-bluetooth-speakers-noise-vibe-5w-wireless-bluetooth-speaker-23141610946739_500x.jpg?v=1688047786",
+        cardImg: "./images/7.jpg",
         title: "Vibe 2 5Wl",
-        subTitle: "gaming with ultra low latency",
+        subTitle: " Bluetooth with Built-in Mic",
         price: "1,499",
         strike: "3,499",
         rating: "3.0"
     },
     {
-        cardImg: "https://www.jiomart.com/images/product/original/493838766/noise-noisefit-mettle-smart-watch-elite-silver-digital-o493838766-p603480304-1-202308020525.jpeg?im=Resize=(420,420)",
+        cardImg: "./images/8.webp",
         title: "NoiseFit Mettle Smart Watch",
-        subTitle: "gaming with ultra low latency",
+        subTitle: "HD display, stainless steel finish",
         price: "2,199",
         strike: "7,999",
         rating: "5.0"
@@ -334,7 +326,6 @@ gsap.to(".page-6", {
         start: 'top top',
         end: 'bottom top',
         pin: true,
-        // scrub: 1,
     },
 })
 
@@ -351,8 +342,10 @@ document.querySelector(".form").addEventListener('mouseleave', () => {
 document.querySelector('.form button').addEventListener('click', (e) => {
     e.preventDefault()
 })
-var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
+function swiper(){
+
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
     pagination: {
@@ -364,19 +357,18 @@ var swiper = new Swiper(".mySwiper", {
         prevEl: ".swiper-button-prev",
     },
 });
+}
 
 let input = document.querySelector('.input input')
 let chatBox = document.querySelector('.chat-box')
 let send = document.querySelector('.send')
 
 send.addEventListener('click', () => {
-    // let inputvalue = input.value
-    // message.innerHTML = `${inputvalue}`
 
     if (input.value === "") {
         alert("write something")
     }
-    else{
+    else {
         let li = document.createElement("li")
         li.innerHTML = input.value
         chatBox.appendChild(li)
@@ -384,3 +376,53 @@ send.addEventListener('click', () => {
     }
 })
 
+
+
+gsap.from('.side-img', {
+    scrollTrigger: {
+        trigger: '.side-img',
+        start: 'top 60%',
+        end: 'bottom bottom',
+        scrub: 1
+    },
+    delay: 1,
+    width: 0,
+    duration: .2
+})
+let menu = document.querySelector('.button button h1')
+function update() {
+    if (window.matchMedia("(max-width: 600px)").matches) {
+        menu.innerHTML = 'Menu';
+    } else {
+        menu.innerHTML = 'Shop Now';
+    }
+}
+update()
+window.addEventListener('resize', update)
+let flag = 0
+let full = document.querySelector('.fullscreen')
+let fullh1 = document.querySelectorAll('.fullscreen h1');
+let h1content = fullh1.textContent;
+menu.addEventListener('click', () => {
+    if (flag === 0) {
+        gsap.to(full, {
+            top: 0
+        })
+        flag = 1
+    }
+    else {
+        gsap.to(full, {
+            top: `-100%`
+        })
+        flag = 0
+    }
+})
+menu.addEventListener('click', () => {
+    fullh1.forEach((h1) => {
+        gsap.from(h1, {
+            y: 200,
+            duration: 1
+        });
+    });
+});
+swiper()

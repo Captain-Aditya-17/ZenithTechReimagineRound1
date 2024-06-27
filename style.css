@@ -1,3 +1,8 @@
+*::selection {
+    background-color: black;
+    color: white;
+}
+
 @font-face {
     font-family: font-1;
     src: url(nasalization-rg.otf);
@@ -39,6 +44,10 @@ body {
     scroll-behavior: smooth;
 }
 
+.fullscreen {
+    display: none;
+}
+
 .main {
     position: relative;
     z-index: 10;
@@ -52,8 +61,7 @@ body {
     height: 2vw;
     border-radius: 50%;
     z-index: 100;
-    opacity: 1;
-    scale: 1;
+    opacity: 0;
 }
 
 .side-text {
@@ -62,11 +70,10 @@ body {
     top: 40%;
     color: white;
     rotate: 90deg;
-    opacity: .8;
+    opacity: .7;
 }
 
 .side-text h1 {
-    /* position: absolute; */
     font-size: 12vw;
     font-family: font-2;
 }
@@ -81,7 +88,7 @@ body {
 .navbar {
     position: absolute;
     z-index: 99;
-    height: 10vh;
+    height: 9vh;
     width: calc(100% - 2rem);
     margin: 1rem;
     box-sizing: border-box;
@@ -112,8 +119,8 @@ body {
 }
 
 .button {
-    margin: 3rem;
-    padding: .2vw 1vw;
+    margin: 1rem;
+    padding: .2vw .2vw .2vw 1.5vw;
     background-color: white;
     border-radius: 30px;
     display: flex;
@@ -131,6 +138,7 @@ body {
 .button:hover button {
     color: white;
 }
+
 
 .button button {
     border: none;
@@ -162,15 +170,14 @@ span i {
     width: 100%;
     height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
     font-family: sans-serif;
     flex-direction: column;
     row-gap: 1rem;
     position: relative;
-    background: linear-gradient(to right, transparent, white, white), url(https://images.livemint.com/img/2022/09/08/1600x900/noise_air_buds_pro_2_1662655807697_1662655823791_1662655823791.png);
+    background: linear-gradient(to right, transparent, white, white), url(./images/home.webp);
     background-size: cover;
-    background-position: center;
+    background-position: top;
     overflow: hidden;
 
 }
@@ -180,7 +187,7 @@ span i {
     right: 0;
     bottom: 5%;
     width: 30%;
-    height: 40%;
+    height: 38%;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
     background: rgba(112, 112, 112, 0.562);
@@ -219,7 +226,6 @@ span i {
     border-radius: 20px;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
 }
 
 .bottom-right {
@@ -257,19 +263,9 @@ span i {
     object-fit: cover;
 }
 
-.img {
-    position: absolute;
-    top: 20%;
-    right: 10%;
-}
-
-.img img {
-    width: 90%;
-}
-
 .heading h1 {
     text-align: center;
-    font-size: 8vw;
+    font-size: 6vw;
     font-weight: 700;
     font-family: font-1;
 
@@ -339,7 +335,6 @@ span i {
     gap: 1vw;
     cursor: none;
     background-color: white;
-    /* position: relative; */
 }
 
 .left {
@@ -349,7 +344,7 @@ span i {
     width: 100%;
     height: 90vh;
     border-radius: 10px;
-    background-image: url(https://cdn.shopify.com/s/files/1/0997/6284/files/1200x1200_9fe27a77-0d41-41f9-85e5-6ae786fa26f5_480x480.jpg?v=1713203190);
+    background-image: url(./images/default.jpg);
     background-size: cover;
     transition: all ease 0.5s;
     cursor: pointer;
@@ -362,7 +357,6 @@ span i {
 .right {
     width: 100%;
     height: 100vh;
-    /* height: 100%; */
 }
 
 .page-1-bottom {
@@ -499,17 +493,15 @@ span i {
     width: 100%;
     height: 100vh;
     background-color: black;
-    background-image: url(https://d3lnc7yu1ksdj.cloudfront.net/wp-content/uploads/2023/06/Anc-1-scaled.jpg);
+    background-image: url(./images/front.jpg);
     background-size: cover;
 }
 
 .page-5 {
     width: calc(100% - 2vw);
     background-color: white;
-    /* height: 300vh; */
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     padding: 1vw;
 
 }
@@ -753,7 +745,6 @@ span i {
     font-weight: 100;
     color: white;
     mix-blend-mode: difference;
-    left: 50%;
     font-family: font-3;
     text-transform: uppercase;
     transform: translateX(-50%);
@@ -770,17 +761,41 @@ span i {
     flex-wrap: wrap;
 }
 
+.img-con .img-7:nth-child(1) h1 {
+    left: 20%;
+}
+
+.img-con .img-7:nth-child(3) h1 {
+    left: 20%;
+}
+
+.img-con .img-7:nth-child(2) h1 {
+    right: -10%;
+}
+
+.img-con .img-7:nth-child(4) h1 {
+    right: -10%;
+}
+
 .page-8 {
     width: 100%;
     height: 100vh;
     background-color: black;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+.page-8 h1 {
+    color: #fff;
+    font-family: font-2;
+    font-size: 3vw;
+    margin: 2rem;
+}
+
 .swiper {
-    width: 100%;
+    width: 90%;
     height: 80%;
 }
 
@@ -796,17 +811,29 @@ span i {
     cursor: pointer;
 }
 
-.swiper-slide h1 {
+.clip {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.815);
+    clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+
+.clip h1 {
     position: absolute;
     top: 70%;
     font-family: font-3;
     font-size: 3vw;
     color: white;
-    opacity: 0;
-    transition: all ease 0.5s;
 }
 
-.swiper-slide:hover h1 {
+.swiper-slide:hover .clip {
     opacity: 1;
 }
 
@@ -819,6 +846,7 @@ span i {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
     transition: all ease 0.5s;
 }
 
@@ -843,7 +871,7 @@ span i {
     flex-direction: column;
     padding: 1vw;
     row-gap: 1rem;
-    background-image: url(https://entrackr.com/storage/2022/04/noise.jpg);
+    background-image: url(./images/chat.jpg);
     background-size: cover;
     color: white;
 }
@@ -962,7 +990,6 @@ li {
     justify-content: center;
     row-gap: 1rem;
     color: white;
-    /* border-right: 2px solid white; */
 }
 
 .foot-left img {
@@ -1014,14 +1041,22 @@ footer {
     bottom: 0;
     z-index: 9;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: black;
 }
 
 .footer h1 {
-    font-size: 12vw;
-    font-family: font-1;
+    font-size: 5vw;
+    font-family: font-2;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.footer h3 {
+    font-size: 1.3vw;
+    font-family: font-3;
     color: white;
     margin-bottom: 2rem;
 }
@@ -1053,6 +1088,36 @@ footer {
 }
 
 @media (max-width: 600px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .fullscreen {
+        position: fixed;
+        z-index: 102;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: end;
+        row-gap: 10px;
+        top: -100%;
+    }
+
+    .fullscreen h1 {
+        display: inline-block;
+        font-size: 10vw;
+        margin: 0 2rem;
+        font-family: font-4;
+        font-weight: 900;
+        opacity: 1;
+        text-transform: uppercase;
+    }
 
     .cursor {
         display: none;
@@ -1060,7 +1125,7 @@ footer {
 
     .navbar {
         position: absolute;
-        z-index: 99;
+        z-index: 102;
         height: 7vh;
         width: calc(100% - 2rem);
         margin: 1rem;
@@ -1099,7 +1164,7 @@ footer {
     }
 
     .button button h1 {
-        font-size: 2vw;
+        font-size: 3vw;
     }
 
     .button span {
@@ -1122,7 +1187,7 @@ footer {
         height: 100vh;
         background-size: cover;
         background-position: bottom;
-        background: linear-gradient(to top, transparent, white, white), url(https://images.livemint.com/img/2022/09/08/1600x900/noise_air_buds_pro_2_1662655807697_1662655823791_1662655823791.png);
+        background: linear-gradient(to top, transparent, white, white), url(./images/home.webp);
         background-color: white;
     }
 
@@ -1146,7 +1211,6 @@ footer {
         font-size: 15vw;
         font-weight: 700;
         font-family: font-1;
-        /* color: black; */
     }
 
     .page-1 h3 {
@@ -1154,8 +1218,8 @@ footer {
     }
 
     .btn button {
-        padding: 2vw 6vw;
-        font-size: 2.8vw;
+        padding: 2vw 8vw;
+        font-size: 4vw;
         background-color: black;
         border: none;
         color: white;
@@ -1179,7 +1243,7 @@ footer {
     .page-2 {
         width: 100%;
         height: 120vh;
-        background-image: url(https://www.gonoise.com/cdn/shop/files/ColorFit-Ultra-3-mobile-2_07.webp?v=1690001963);
+        background-image: url(./images/virat.jpeg);
         background-position: center;
     }
 
@@ -1201,7 +1265,6 @@ footer {
         padding: 1vw;
         gap: 1vw;
         cursor: pointer;
-        /* position: relative; */
     }
 
     .left {
@@ -1215,7 +1278,6 @@ footer {
     .right {
         width: 100%;
         height: 100vh;
-        /* height: 100%; */
     }
 
     .side-img {
@@ -1223,7 +1285,7 @@ footer {
     }
 
     .desc {
-        background-image: url(https://www.gonoise.com/cdn/shop/files/mobile2.jpg?v=1714634063);
+        background-image: url(./images/strap.jpg);
         cursor: pointer;
     }
 
@@ -1319,7 +1381,7 @@ footer {
         width: 100%;
         height: 100vh;
         background-color: black;
-        background-image: url(https://imgs.search.brave.com/lc2aEq5pwzyWlBWg-xP4KTOdf9KbYHo0jxcd1ZtjfKE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/emVicnMuY29tL3Vw/bG9hZHMvemVicnMv/cHJvZHVjdHMvbm9p/c2UtcXVhZC1jYWxs/LTE4MXF1b3QtZGlz/cGxheS1ibHVldG9v/dGgtY2FsbGluZy1z/bWFydC13YXRjaC1h/aS12b2ljZS1hc3Np/c3RhbmNlLTY3Mzgw/MDAwMTczNTc0N19t/LmpwZz92PTQyMw);
+        background-image: url(./images/front-res.jpg);
         background-size: cover;
         background-position: center;
     }
@@ -1345,8 +1407,8 @@ footer {
     }
 
     .card {
-        width: 40%;
-        height: 43vh;
+        width: 45%;
+        height: 30vh;
         padding: 10px;
         position: relative;
         display: flex;
@@ -1357,7 +1419,7 @@ footer {
 
     .card-img {
         width: 100%;
-        height: 100%;
+        height: 70%;
         border-radius: 10px;
         overflow: hidden;
     }
@@ -1463,7 +1525,6 @@ footer {
 
     .form {
         position: absolute;
-        /* left: 50%; */
         width: 50%;
         top: 60%;
         transform: translate(-50%, -50%);
@@ -1476,7 +1537,6 @@ footer {
         justify-content: center;
         flex-direction: column;
         row-gap: 3rem;
-        /* background-color: red; */
     }
 
     .form p {
@@ -1523,7 +1583,7 @@ footer {
     }
 
     .page-7 {
-        width: calc(100% - 2vw);
+        width: 100%;
         padding: 1vw;
         height: 200vh;
         display: flex;
@@ -1534,7 +1594,7 @@ footer {
     }
 
     .img-7 {
-        width: calc(100% - 1rem);
+        width: 90%;
         border-radius: 10px;
         overflow: hidden;
         height: 40vh;
@@ -1575,7 +1635,7 @@ footer {
 
 
     .chat {
-        width: calc(100% - 2vw);
+        width: 100%;
         height: 110vh;
         display: flex;
         align-items: center;
@@ -1583,13 +1643,13 @@ footer {
         flex-direction: column;
         padding: 1vw;
         row-gap: 1rem;
-        background-image: url(https://entrackr.com/storage/2022/04/noise.jpg);
+        background-image: url(./images/chat.jpg);
         background-size: cover;
         color: white;
     }
 
     .chat-box {
-        width: calc(100% - 2vw);
+        width: 90%;
         height: 80vh;
         background-color: rgba(255, 255, 255, 0.267);
         backdrop-filter: blur(10px);
@@ -1736,10 +1796,14 @@ footer {
 
 
     .footer h1 {
-        font-size: 12vw;
-        font-family: font-1;
+        font-size: 15vw;
+        font-family: font-2;
         color: white;
         margin-bottom: 2rem;
+    }
+
+    .footer h3 {
+        font-size: 5vw;
     }
 
     .foot-right {
@@ -1747,7 +1811,7 @@ footer {
         height: 100%;
         display: flex;
         justify-content: center;
-        align-items: top;
+        align-items: start;
         gap: 10vw;
     }
 
