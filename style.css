@@ -175,7 +175,7 @@ span i {
     flex-direction: column;
     row-gap: 1rem;
     position: relative;
-    background: linear-gradient(to right, transparent, white, white), url(./images/home.webp);
+    background: linear-gradient(to right, transparent, white, white), url(watch.jpeg);
     background-size: cover;
     background-position: top;
     overflow: hidden;
