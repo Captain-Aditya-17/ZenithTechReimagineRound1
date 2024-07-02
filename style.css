@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: font-1;
-    src: url(nasalization-rg.otf);
+    src: url(nasalization-rg.ttf);
 }
 
 @font-face {
@@ -15,12 +15,12 @@
 
 @font-face {
     font-family: font-3;
-    src: url(NeueMachina-Light.otf);
+    src: url(NeueMachina-Light.ttf);
 }
 
 @font-face {
     font-family: font-4;
-    src: url(Lugati\ BLD\ EXP.otf);
+    src: url(Lugati\ BLD\ EXP.ttf);
 }
 
 * {
@@ -304,39 +304,6 @@ span i {
     height: 110vh;
     object-fit: cover;
     object-position: bottom;
-}
-.about {
-    height: 100vh;
-    width: 100%;
-    background-color: #000;
-    background-image: url('https://e1.pxfuel.com/desktop-wallpaper/21/995/desktop-wallpaper-realme-watch-colour-options-screen-firstpost-smartwatch.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    color: white;
-}
-.about-left{
-    width: 50%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.603);
-    backdrop-filter: blur(20px);
-    font-family: font-1;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-}
-.about-left h1{
-    font-size: 5vw;
-    margin: 5rem 2rem 0 ;
-}
-.about-left p{
-    font-size: 1vw;
-    color: grey;
-    margin:  2rem ;
-    width: 80%;
 }
 .page-2 {
     width: 100%;
