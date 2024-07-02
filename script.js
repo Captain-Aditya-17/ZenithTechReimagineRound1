@@ -160,6 +160,23 @@ gsap.from(".back h1", {
     stagger: .3,
     duration: .3
 })
+
+let abouttl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".about",
+        start: "-80% top",
+        end: "top top",
+        scrub: 1,
+    },
+})
+abouttl.from(".about h1", {
+    x: 200,
+    opacity: 0
+})
+abouttl.from(".about p", {
+    x: 200,
+    opacity: 0
+})
 gsap.to(".front", {
     scrollTrigger: {
         trigger: ".page-4",
